@@ -1,0 +1,17 @@
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+<div class="container">
+{% if register %}
+  <h1>THANK YOU SUCCESSFULLY COMPLETED THE REGISTRATION</h1>
+{% else %}
+  <h1>APP REGISTRATION</h1>
+  <form enctype="multipart/form-data" method="post">
+
+{{ user_form.as_p }}
+{{ profile_form.as_p }}
+  {% csrf_token %}
+  <input type="submit"  value="SIGNUP">
+</form>
+{% endif %}
+</div>
+{% endblock %}
